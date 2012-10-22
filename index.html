@@ -100,48 +100,35 @@
 
 <h4>to build the library and run tests</h4>
 
-<div class="highlight">
-<pre>tanga:jsx alisdair<span class="nv">$ </span>sinan build
-tanga:jsx alisdair<span class="nv">$ </span>sinan -r tests eunit
-</pre>
-</div>
-
+<div class="highlight"><pre><span class="nv">$ </span>sinan build
+<span class="nv">$ </span>sinan -r tests eunit
+</pre></div>
 
 <p>or</p>
 
-<div class="highlight">
-<pre>tanga:jsx alisdair<span class="nv">$ </span>rebar compile
-tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
-</pre>
-</div>
-
+<div class="highlight"><pre><span class="nv">$ </span>rebar compile
+<span class="nv">$ </span>rebar eunit
+</pre></div>
 
 <h4>to convert a utf8 binary containing a json string into an erlang term</h4>
 
-<div class="highlight">
-<pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">decode</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">library</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">jsx</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">awesome</span><span class="se">\"</span><span class="s">: true}"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
+<div class="highlight"><pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">decode</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">library</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">jsx</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">awesome</span><span class="se">\"</span><span class="s">: true}"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
 <span class="p">[{</span><span class="o">&lt;&lt;</span><span class="s">"library"</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="o">&lt;&lt;</span><span class="s">"jsx"</span><span class="o">&gt;&gt;</span><span class="p">},{</span><span class="o">&lt;&lt;</span><span class="s">"awesome"</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="n">true</span><span class="p">}]</span>
 <span class="mi">2</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">decode</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"[</span><span class="se">\"</span><span class="s">a</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">list</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">of</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">words</span><span class="se">\"</span><span class="s">]"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
 <span class="p">[</span><span class="o">&lt;&lt;</span><span class="s">"a"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="o">&lt;&lt;</span><span class="s">"list"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="o">&lt;&lt;</span><span class="s">"of"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="o">&lt;&lt;</span><span class="s">"words"</span><span class="o">&gt;&gt;</span><span class="p">]</span>
-</pre>
-</div>
-
+</pre></div>
 
 <h4>to convert an erlang term into a utf8 binary containing a json string</h4>
 
-<div class="highlight">
-<pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">encode</span><span class="p">([{</span><span class="o">&lt;&lt;</span><span class="s">"library"</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="o">&lt;&lt;</span><span class="s">"jsx"</span><span class="o">&gt;&gt;</span><span class="p">},{</span><span class="o">&lt;&lt;</span><span class="s">"awesome"</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="n">true</span><span class="p">}]).</span>
+<div class="highlight"><pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">encode</span><span class="p">([{</span><span class="o">&lt;&lt;</span><span class="s">"library"</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="o">&lt;&lt;</span><span class="s">"jsx"</span><span class="o">&gt;&gt;</span><span class="p">},{</span><span class="o">&lt;&lt;</span><span class="s">"awesome"</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="n">true</span><span class="p">}]).</span>
 <span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">library</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">jsx</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">awesome</span><span class="se">\"</span><span class="s">: true}"</span><span class="o">&gt;&gt;</span>
 <span class="mi">2</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">encode</span><span class="p">([</span><span class="o">&lt;&lt;</span><span class="s">"a"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="o">&lt;&lt;</span><span class="s">"list"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="o">&lt;&lt;</span><span class="s">"of"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="o">&lt;&lt;</span><span class="s">"words"</span><span class="o">&gt;&gt;</span><span class="p">]).</span>
 <span class="o">&lt;&lt;</span><span class="s">"[</span><span class="se">\"</span><span class="s">a</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">list</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">of</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">words</span><span class="se">\"</span><span class="s">]"</span><span class="o">&gt;&gt;</span>
-</pre>
-</div>
-
+</pre></div>
 
 <h4>to check if a binary or a term is valid json</h4>
 
-<div class="highlight">
-<pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">is_json</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"[</span><span class="se">\"</span><span class="s">this is json</span><span class="se">\"</span><span class="s">]"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
+<div class="highlight"><pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">is_json</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"[</span><span class="se">\"</span><span class="s">this is json</span><span class="se">\"</span><span class="s">]"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
 <span class="n">true</span>
 <span class="mi">2</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">is_json</span><span class="p">(</span><span class="s">"[</span><span class="se">\"</span><span class="s">this is not</span><span class="se">\"</span><span class="s">]"</span><span class="p">).</span>
 <span class="n">false</span>
@@ -149,14 +136,11 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 <span class="n">true</span>
 <span class="mi">4</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">is_term</span><span class="p">([</span><span class="s">"this is not"</span><span class="p">]).</span>
 <span class="n">false</span>
-</pre>
-</div>
-
+</pre></div>
 
 <h4>to minify some json</h4>
 
-<div class="highlight">
-<pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">minify</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"{</span>
+<div class="highlight"><pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">minify</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"{</span>
 <span class="s">  </span><span class="se">\"</span><span class="s">a list</span><span class="se">\"</span><span class="s">: [</span>
 <span class="s">    1,</span>
 <span class="s">    2,</span>
@@ -164,14 +148,11 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 <span class="s">  ]</span>
 <span class="s">}"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
 <span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">a list</span><span class="se">\"</span><span class="s">:[1,2,3]}"</span><span class="o">&gt;&gt;</span>
-</pre>
-</div>
-
+</pre></div>
 
 <h4>to prettify some json</h4>
 
-<div class="highlight">
-<pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">prettify</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">a list</span><span class="se">\"</span><span class="s">:[1,2,3]}"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
+<div class="highlight"><pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">prettify</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">a list</span><span class="se">\"</span><span class="s">:[1,2,3]}"</span><span class="o">&gt;&gt;</span><span class="p">).</span>
 <span class="o">&lt;&lt;</span><span class="s">"{</span>
 <span class="s">  </span><span class="se">\"</span><span class="s">a list</span><span class="se">\"</span><span class="s">: [</span>
 <span class="s">    1,</span>
@@ -179,9 +160,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 <span class="s">    3</span>
 <span class="s">  ]</span>
 <span class="s">}"</span><span class="o">&gt;&gt;</span>
-</pre>
-</div>
-
+</pre></div>
 
 <h2>description</h2>
 
@@ -198,18 +177,40 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 <h3>json &lt;-&gt; erlang mapping</h3>
 
 <table>
-<strong>json</strong>
-<strong>erlang</strong>
-<code>number</code>
+<tr>
+<th><strong>json</strong></th>
+<th><strong>erlang</strong></th>
+</tr>
+<tr>
+<td><code>number</code></td>
+<td>
 <code>integer()</code> and <code>float()</code>
-<code>string</code>
-<code>binary()</code>
+</td>
+</tr>
+<tr>
+<td><code>string</code></td>
+<td><code>binary()</code></td>
+</tr>
+<tr>
+<td>
 <code>true</code>, <code>false</code> and <code>null</code>
+</td>
+<td>
 <code>true</code>, <code>false</code> and <code>null</code>
-<code>array</code>
+</td>
+</tr>
+<tr>
+<td><code>array</code></td>
+<td>
 <code>[]</code> and <code>[JSON]</code>
-<code>object</code>
+</td>
+</tr>
+<tr>
+<td><code>object</code></td>
+<td>
 <code>[{}]</code> and <code>[{binary() OR atom(), JSON}]</code>
+</td>
+</tr>
 </table><ul>
 <li>
 <p>numbers</p>
@@ -256,8 +257,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>json_term()</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">json_term</span><span class="p">()</span> <span class="o">=</span> <span class="p">[</span><span class="n">json_term</span><span class="p">()]</span>
+<div class="highlight"><pre><span class="nf">json_term</span><span class="p">()</span> <span class="o">=</span> <span class="p">[</span><span class="n">json_term</span><span class="p">()]</span>
     <span class="p">|</span> <span class="p">[{</span><span class="n">binary</span><span class="p">()</span> <span class="p">|</span> <span class="n">atom</span><span class="p">(),</span> <span class="n">json_term</span><span class="p">()}]</span>
     <span class="p">|</span> <span class="n">true</span>
     <span class="p">|</span> <span class="n">false</span>
@@ -265,26 +265,20 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
     <span class="p">|</span> <span class="n">integer</span><span class="p">()</span>
     <span class="p">|</span> <span class="nb">float</span><span class="p">()</span>
     <span class="p">|</span> <span class="n">binary</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>the erlang representation of json. binaries should be <code>utf8</code> encoded, or close at least</p>
 
 <h4><code>json_text()</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">json_text</span><span class="p">()</span> <span class="o">=</span> <span class="n">binary</span><span class="p">()</span>
-</pre>
-</div>
-
+<div class="highlight"><pre><span class="nf">json_text</span><span class="p">()</span> <span class="o">=</span> <span class="n">binary</span><span class="p">()</span>
+</pre></div>
 
 <p>a utf8 encoded binary containing a json string</p>
 
 <h4><code>token()</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">token</span><span class="p">()</span> <span class="o">=</span> <span class="n">start_object</span>
+<div class="highlight"><pre><span class="nf">token</span><span class="p">()</span> <span class="o">=</span> <span class="n">start_object</span>
     <span class="p">|</span> <span class="n">end_object</span>
     <span class="p">|</span> <span class="n">start_array</span>
     <span class="p">|</span> <span class="n">end_array</span>
@@ -303,16 +297,13 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
     <span class="p">|</span> <span class="n">false</span>
     <span class="p">|</span> <span class="n">null</span>
     <span class="p">|</span> <span class="n">end_json</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>the internal representation used during syntactic analysis</p>
 
 <h4><code>event()</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">event</span><span class="p">()</span> <span class="o">=</span> <span class="n">start_object</span>
+<div class="highlight"><pre><span class="nf">event</span><span class="p">()</span> <span class="o">=</span> <span class="n">start_object</span>
     <span class="p">|</span> <span class="n">end_object</span>
     <span class="p">|</span> <span class="n">start_array</span>
     <span class="p">|</span> <span class="n">end_array</span>
@@ -324,16 +315,13 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
     <span class="p">|</span> <span class="p">{</span><span class="n">literal</span><span class="p">,</span> <span class="n">false</span><span class="p">}</span>
     <span class="p">|</span> <span class="p">{</span><span class="n">literal</span><span class="p">,</span> <span class="n">null</span><span class="p">}</span>
     <span class="p">|</span> <span class="n">end_json</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>the internal representation used during semantic analysis</p>
 
 <h4><code>option()</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">option</span><span class="p">()</span> <span class="o">=</span> <span class="n">replaced_bad_utf8</span>
+<div class="highlight"><pre><span class="nf">option</span><span class="p">()</span> <span class="o">=</span> <span class="n">replaced_bad_utf8</span>
     <span class="p">|</span> <span class="n">escaped_forward_slashes</span>
     <span class="p">|</span> <span class="n">single_quoted_strings</span>
     <span class="p">|</span> <span class="n">unescaped_jsonp</span>
@@ -343,9 +331,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
     <span class="p">|</span> <span class="n">ignored_bad_escapes</span>
     <span class="p">|</span> <span class="n">relax</span>
     <span class="p">|</span> <span class="n">explicit_end</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>jsx functions all take a common set of options. not all flags have meaning in all contexts, but they are always valid options. functions may have additional options beyond these. see <a href="#exports">individual function documentation</a> for details</p>
 
@@ -358,7 +344,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 <li>
 <p><code>escaped_forward_slashes</code></p>
 
-<p>json strings are escaped according to the json spec. this means forward slashes (solidus) are optionally escaped. this option is only relevant for encoding; you may want to use this if you are embedding json directly into a html or xml document</p>
+<p>json strings are escaped according to the json spec. this means forward slashes (solidus) are only escaped when this flag is present. otherwise they are left unescaped. this option is only relevant for encoding; you may want to use this if you are embedding json directly into a html or xml document</p>
 </li>
 <li>
 <p><code>single_quoted_strings</code></p>
@@ -410,8 +396,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 <code>encoder/3</code>, <code>decoder/3</code> &amp; <code>parser/3</code>
 </h4>
 
-<div class="highlight">
-<pre><span class="nf">decoder</span><span class="p">(</span><span class="nv">Module</span><span class="p">,</span> <span class="nv">Args</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">Fun</span><span class="p">((</span><span class="nv">JSONText</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">any</span><span class="p">())</span>
+<div class="highlight"><pre><span class="nf">decoder</span><span class="p">(</span><span class="nv">Module</span><span class="p">,</span> <span class="nv">Args</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">Fun</span><span class="p">((</span><span class="nv">JSONText</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">any</span><span class="p">())</span>
 <span class="nf">encoder</span><span class="p">(</span><span class="nv">Module</span><span class="p">,</span> <span class="nv">Args</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">Fun</span><span class="p">((</span><span class="nv">JSONTerm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">any</span><span class="p">())</span>
 <span class="nf">parser</span><span class="p">(</span><span class="nv">Module</span><span class="p">,</span> <span class="nv">Args</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">Fun</span><span class="p">((</span><span class="nv">Tokens</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">any</span><span class="p">())</span>
 
@@ -421,9 +406,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
   <span class="nv">JSONText</span> <span class="o">=</span> <span class="n">json_text</span><span class="p">()</span>
   <span class="nv">JSONTerm</span> <span class="o">=</span> <span class="n">json_term</span><span class="p">()</span>
   <span class="nv">Tokens</span> <span class="o">=</span> <span class="n">token</span><span class="p">()</span> <span class="p">|</span> <span class="p">[</span><span class="n">token</span><span class="p">()]</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>jsx is a json compiler with interleaved tokenizing, syntactic analysis and semantic analysis stages. included are two tokenizers; one that handles json texts (<code>decoder/3</code>) and one that handles erlang terms (<code>encoder/3</code>). there is also an entry point to the syntactic analysis stage for use with user-defined tokenizers (<code>parser/3</code>)</p>
 
@@ -439,8 +422,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>decode/1,2</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">decode</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">Term</span>
+<div class="highlight"><pre><span class="nf">decode</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">Term</span>
 <span class="nf">decode</span><span class="p">(</span><span class="nv">JSON</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">Term</span>
 
   <span class="nv">JSON</span> <span class="o">=</span> <span class="n">json_text</span><span class="p">()</span>
@@ -448,9 +430,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
   <span class="nv">Opts</span> <span class="o">=</span> <span class="p">[</span><span class="n">option</span><span class="p">()</span> <span class="p">|</span> <span class="n">labels</span> <span class="p">|</span> <span class="p">{</span><span class="n">labels</span><span class="p">,</span> <span class="nv">Label</span><span class="p">}</span> <span class="p">|</span> <span class="p">{</span><span class="n">post_decode</span><span class="p">,</span> <span class="nv">F</span><span class="p">}]</span>
     <span class="nv">Label</span> <span class="o">=</span> <span class="n">binary</span> <span class="p">|</span> <span class="n">atom</span> <span class="p">|</span> <span class="n">existing_atom</span>
     <span class="nv">F</span> <span class="o">=</span> <span class="k">fun</span><span class="p">((</span><span class="n">any</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">any</span><span class="p">())</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p><code>decode</code> parses a json text (a <code>utf8</code> encoded binary) and produces an erlang term</p>
 
@@ -458,13 +438,10 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <p><code>{post_decode, F}</code> is a user defined function of arity 1 that is called on each output value (objects, arrays, strings, numbers and literals). it may return any value to be substituted in the returned term. for example:</p>
 
-<div class="highlight">
-<pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nv">F</span> <span class="o">=</span> <span class="k">fun</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_list</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">V</span><span class="p">;</span> <span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">false</span> <span class="k">end</span><span class="p">.</span>
+<div class="highlight"><pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nv">F</span> <span class="o">=</span> <span class="k">fun</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_list</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">V</span><span class="p">;</span> <span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">false</span> <span class="k">end</span><span class="p">.</span>
 <span class="mi">2</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">decode</span><span class="p">(</span><span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">a list</span><span class="se">\"</span><span class="s">: [true, </span><span class="se">\"</span><span class="s">a string</span><span class="se">\"</span><span class="s">, 1]}"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="p">[{</span><span class="n">post_decode</span><span class="p">,</span> <span class="nv">F</span><span class="p">}]).</span>
 <span class="p">[{</span><span class="o">&lt;&lt;</span><span class="s">"a list"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="p">[</span><span class="n">false</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="n">false</span><span class="p">]}]</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>declaring more than one post-decoder will result in a <code>badarg</code> error exception</p>
 
@@ -472,8 +449,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>encode/1,2</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">encode</span><span class="p">(</span><span class="nv">Term</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
+<div class="highlight"><pre><span class="nf">encode</span><span class="p">(</span><span class="nv">Term</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
 <span class="nf">encode</span><span class="p">(</span><span class="nv">Term</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
 
   <span class="nv">Term</span> <span class="o">=</span> <span class="n">json_term</span><span class="p">()</span>
@@ -481,9 +457,7 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
   <span class="nv">Opts</span> <span class="o">=</span> <span class="p">[</span><span class="n">option</span><span class="p">()</span> <span class="p">|</span> <span class="p">{</span><span class="n">pre_encode</span><span class="p">,</span> <span class="nv">F</span><span class="p">}</span> <span class="p">|</span> <span class="n">space</span> <span class="p">|</span> <span class="p">{</span><span class="n">space</span><span class="p">,</span> <span class="nv">N</span><span class="p">}</span> <span class="p">|</span> <span class="n">indent</span> <span class="p">|</span> <span class="p">{</span><span class="n">indent</span><span class="p">,</span> <span class="nv">N</span><span class="p">}]</span>
     <span class="nv">F</span> <span class="o">=</span> <span class="k">fun</span><span class="p">((</span><span class="n">any</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">any</span><span class="p">())</span>
     <span class="nv">N</span> <span class="o">=</span> <span class="n">pos_integer</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p><code>encode</code> parses a json text (a <code>utf8</code> encoded binary) and produces an erlang term</p>
 
@@ -493,13 +467,10 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <p><code>{pre_encode, F}</code> is a user defined function of arity 1 that is called on each input value. it may return any valid json value to be substituted in the returned json. for example:</p>
 
-<div class="highlight">
-<pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nv">F</span> <span class="o">=</span> <span class="k">fun</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_list</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">V</span><span class="p">;</span> <span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">false</span> <span class="k">end</span><span class="p">.</span>
+<div class="highlight"><pre><span class="mi">1</span><span class="o">&gt;</span> <span class="nv">F</span> <span class="o">=</span> <span class="k">fun</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="k">when</span> <span class="nb">is_list</span><span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">V</span><span class="p">;</span> <span class="p">(</span><span class="nv">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">false</span> <span class="k">end</span><span class="p">.</span>
 <span class="mi">2</span><span class="o">&gt;</span> <span class="nn">jsx</span><span class="p">:</span><span class="n">encode</span><span class="p">([{</span><span class="o">&lt;&lt;</span><span class="s">"a list"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="p">[</span><span class="n">true</span><span class="p">,</span> <span class="o">&lt;&lt;</span><span class="s">"a string"</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}],</span> <span class="p">[{</span><span class="n">pre_encode</span><span class="p">,</span> <span class="nv">F</span><span class="p">}]).</span>
 <span class="o">&lt;&lt;</span><span class="s">"{</span><span class="se">\"</span><span class="s">a list</span><span class="se">\"</span><span class="s">: [false, false, false]}"</span><span class="o">&gt;&gt;</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>declaring more than one pre-encoder will result in a <code>badarg</code> error exception</p>
 
@@ -507,16 +478,13 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>format/1,2</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">format</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
+<div class="highlight"><pre><span class="nf">format</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
 <span class="nf">format</span><span class="p">(</span><span class="nv">JSON</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
 
   <span class="nv">JSON</span> <span class="o">=</span> <span class="n">json_text</span><span class="p">()</span>
   <span class="nv">Opts</span> <span class="o">=</span> <span class="p">[</span><span class="n">option</span><span class="p">()</span> <span class="p">|</span> <span class="n">space</span> <span class="p">|</span> <span class="p">{</span><span class="n">space</span><span class="p">,</span> <span class="nv">N</span><span class="p">}</span> <span class="p">|</span> <span class="n">indent</span> <span class="p">|</span> <span class="p">{</span><span class="n">indent</span><span class="p">,</span> <span class="nv">N</span><span class="p">}]</span>
     <span class="nv">N</span> <span class="o">=</span> <span class="n">pos_integer</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p><code>format</code> parses a json text (a <code>utf8</code> encoded binary) and produces a new json text according to the format rules specified by <code>Opts</code></p>
 
@@ -528,13 +496,10 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>minify/1</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">minify</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
+<div class="highlight"><pre><span class="nf">minify</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
 
   <span class="nv">JSON</span> <span class="o">=</span> <span class="n">json_text</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p><code>minify</code> parses a json text (a <code>utf8</code> encoded binary) and produces a new json text stripped of whitespace</p>
 
@@ -542,13 +507,10 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>prettify/1</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">prettify</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
+<div class="highlight"><pre><span class="nf">prettify</span><span class="p">(</span><span class="nv">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">JSON</span>
 
   <span class="nv">JSON</span> <span class="o">=</span> <span class="n">json_text</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p><code>prettify</code> parses a json text (a <code>utf8</code> encoded binary) and produces a new json text equivalent to <code>format(JSON, [{space, 1}, {indent, 2}])</code></p>
 
@@ -556,15 +518,12 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>is_json/1,2</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">is_json</span><span class="p">(</span><span class="nv">MaybeJSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="p">|</span> <span class="n">false</span>
+<div class="highlight"><pre><span class="nf">is_json</span><span class="p">(</span><span class="nv">MaybeJSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="p">|</span> <span class="n">false</span>
 <span class="nf">is_json</span><span class="p">(</span><span class="nv">MaybeJSON</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="p">|</span> <span class="n">false</span>
 
   <span class="nv">MaybeJSON</span> <span class="o">=</span> <span class="n">any</span><span class="p">()</span>
   <span class="nv">Opts</span> <span class="o">=</span> <span class="n">options</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>returns true if input is a valid json text, false if not</p>
 
@@ -572,15 +531,12 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>is_term/1,2</code></h4>
 
-<div class="highlight">
-<pre><span class="nf">is_term</span><span class="p">(</span><span class="nv">MaybeJSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="p">|</span> <span class="n">false</span>
+<div class="highlight"><pre><span class="nf">is_term</span><span class="p">(</span><span class="nv">MaybeJSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="p">|</span> <span class="n">false</span>
 <span class="nf">is_term</span><span class="p">(</span><span class="nv">MaybeJSON</span><span class="p">,</span> <span class="nv">Opts</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">true</span> <span class="p">|</span> <span class="n">false</span>
 
   <span class="nv">MaybeJSON</span> <span class="o">=</span> <span class="n">any</span><span class="p">()</span>
   <span class="nv">Opts</span> <span class="o">=</span> <span class="n">options</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>returns true if input is a valid erlang representation of json, false if not</p>
 
@@ -592,28 +548,22 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
 
 <h4><code>Module:init/1</code></h4>
 
-<div class="highlight">
-<pre><span class="nv">Module</span><span class="p">:</span><span class="n">init</span><span class="p">(</span><span class="nv">Args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">InitialState</span>
+<div class="highlight"><pre><span class="nv">Module</span><span class="p">:</span><span class="n">init</span><span class="p">(</span><span class="nv">Args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">InitialState</span>
 
   <span class="nv">Args</span> <span class="o">=</span> <span class="n">any</span><span class="p">()</span>
   <span class="nv">InitialState</span> <span class="o">=</span> <span class="n">any</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>whenever any of <code>encoder/3</code>, <code>decoder/3</code> or <code>parser/3</code> are called, this function is called with the <code>Args</code> argument provided in the calling function to obtain <code>InitialState</code></p>
 
 <h4><code>Module:handle_event/2</code></h4>
 
-<div class="highlight">
-<pre><span class="nv">Module</span><span class="p">:</span><span class="n">handle_event</span><span class="p">(</span><span class="nv">Event</span><span class="p">,</span> <span class="nv">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">NewState</span>
+<div class="highlight"><pre><span class="nv">Module</span><span class="p">:</span><span class="n">handle_event</span><span class="p">(</span><span class="nv">Event</span><span class="p">,</span> <span class="nv">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">NewState</span>
 
   <span class="nv">Event</span> <span class="o">=</span> <span class="p">[</span><span class="n">event</span><span class="p">()]</span>
   <span class="nv">State</span> <span class="o">=</span> <span class="n">any</span><span class="p">()</span>
   <span class="nv">NewState</span> <span class="o">=</span> <span class="n">any</span><span class="p">()</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>semantic analysis is performed by repeatedly calling <code>handle_event/2</code> with a stream of events emitted by the tokenizer and the current state. the new state returned is used as the input to the next call to <code>handle_event/2</code>. the following events must be handled:</p>
 
@@ -684,7 +634,17 @@ tanga:jsx alisdair<span class="nv">$ </span>rebar eunit
       </section>
 
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-    
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33070568-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
